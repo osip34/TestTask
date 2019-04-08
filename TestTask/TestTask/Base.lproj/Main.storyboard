@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,85 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LHM-kX-4hv">
+                                <rect key="frame" x="94" y="30" width="187.5" height="29"/>
+                                <segments>
+                                    <segment title="Cars"/>
+                                    <segment title="Plains"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Q8E-N6-94j"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-RT-1ub">
+                                <rect key="frame" x="19" y="78" width="337.5" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTVCell" id="U0r-xW-Z7m" customClass="CustomTVCell" customModule="TestTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="337.5" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U0r-xW-Z7m" id="vbK-zR-3eL">
+                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-xl-WcT">
+                                                    <rect key="frame" x="10" y="10" width="280.5" height="23.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCw-Bu-4Hv" userLabel="DotView">
+                                                    <rect key="frame" x="300.5" y="11" width="22" height="22"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yCw-Bu-4Hv" secondAttribute="height" multiplier="1:1" id="Ddg-Tm-1O5"/>
+                                                        <constraint firstAttribute="width" constant="22" id="Kur-CD-b1d"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.89955359400000001" green="1" blue="0.48061951200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yCw-Bu-4Hv" secondAttribute="trailing" id="0D3-PT-AOS"/>
+                                                <constraint firstItem="yCw-Bu-4Hv" firstAttribute="leading" secondItem="yjF-xl-WcT" secondAttribute="trailing" constant="10" id="A7Y-Of-DOl"/>
+                                                <constraint firstItem="yjF-xl-WcT" firstAttribute="leading" secondItem="vbK-zR-3eL" secondAttribute="leading" constant="10" id="SwJ-v0-ArY"/>
+                                                <constraint firstItem="yCw-Bu-4Hv" firstAttribute="centerY" secondItem="vbK-zR-3eL" secondAttribute="centerY" id="VLZ-7E-UVU"/>
+                                                <constraint firstAttribute="bottom" secondItem="yjF-xl-WcT" secondAttribute="bottom" constant="10" id="ZJJ-Kz-UOC"/>
+                                                <constraint firstItem="yjF-xl-WcT" firstAttribute="top" secondItem="vbK-zR-3eL" secondAttribute="top" constant="10" id="fUF-dq-k6n"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dot" destination="yCw-Bu-4Hv" id="c4H-Zh-OAR"/>
+                                            <outlet property="label" destination="yjF-xl-WcT" id="WhN-fg-gbT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LHM-kX-4hv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PTO-VC-6wu"/>
+                            <constraint firstItem="Ktg-RT-1ub" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e2k-Vw-TeS"/>
+                            <constraint firstItem="LHM-kX-4hv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="iB6-HN-ymO"/>
+                            <constraint firstItem="Ktg-RT-1ub" firstAttribute="top" secondItem="LHM-kX-4hv" secondAttribute="bottom" constant="20" id="nLL-h5-nef"/>
+                            <constraint firstItem="LHM-kX-4hv" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="1:2" id="qGI-bf-qer"/>
+                            <constraint firstItem="Ktg-RT-1ub" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9:1" id="x04-Va-Wbj"/>
+                            <constraint firstItem="Ktg-RT-1ub" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ysw-92-PTZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="LHM-kX-4hv" id="PYx-Dj-o6G"/>
+                        <outlet property="tableView" destination="Ktg-RT-1ub" id="XmW-fT-iWg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

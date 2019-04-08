@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TestTask
-//
-//  Created by Andrii Osipchuk on 4/8/19.
-//  Copyright © 2019 ReatailMeNot. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
